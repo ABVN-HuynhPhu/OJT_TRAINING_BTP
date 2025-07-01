@@ -16,14 +16,13 @@
                     <ComboBox id="departmentFilter" change="onDepartmentFilterChange" width="300px" items="{departments>/}">
                         <core:Item key="{departments>ID}" text="{departments>name}"/>
                     </ComboBox>
-                </HBox>
-                
-                <HBox alignItems="Center" class="sapUiSmallMarginBottom">
+
                     <Label text="Role" width="100px" textAlign="End" class="sapUiTinyMarginEnd"/>
                     <ComboBox id="roleFilter" change="onRoleFilterChange" width="300px" items="{roles>/}">
                         <core:Item key="{roles>ID}" text="{roles>name}"/>
                     </ComboBox>
                 </HBox>
+
                 <Table
                     id="employeeTable"
                     items="{path: '/Employees', parameters: { $expand: 'department,role' }}"

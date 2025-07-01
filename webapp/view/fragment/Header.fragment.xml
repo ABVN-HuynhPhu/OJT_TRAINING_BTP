@@ -3,8 +3,7 @@
     xmlns:core="sap.ui.core">
     <Toolbar id="appHeader" height="3rem" design="Solid">
         <content>
-            <Image src="./img/Abeam_Logo.jpg" width="24px"/>
-            <Title text="Abeam Consulting Vietnam" level="H3" class="sapUiTinyMarginBegin"/>
+            <Title text="HUYNH THIEN PHU" level="H3" class="sapUiTinyMarginBegin"/>
             <ToolbarSpacer/>
             <Button text="Add Employee" press=".onNavToInputForm"/>
             <Button text="Employee List" press=".onNavToEmployeeList" class="sapUiTinyMarginBegin"/>
