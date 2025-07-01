@@ -21,91 +21,140 @@
                 columnsXL="1" columnsL="1" columnsM="1"
                 singleContainerFullSize="false"
                 class="sapUiResponsiveMargin">
-<f:content>
+                <f:content>
 
-    <!-- First Name -->
-    <Label text="First Name" required="true"/>
-    <Input 
-        value="{employee>/firstName}" 
-        valueState="{validation>/firstNameState}"
-        valueStateText="{validation>/firstNameStateText}"
-        placeholder="Enter first name" 
-        width="100%" 
-        required="true"/>
+                    <Label text=""/>
 
-    <!-- Last Name -->
-    <Label text="Last Name" required="true"/>
-    <Input 
-        value="{employee>/lastName}" 
-        valueState="{validation>/lastNameState}"
-        valueStateText="{validation>/lastNameStateText}"
-        placeholder="Enter last name" 
-        width="100%" 
-        required="true"/>
+                    <HBox
+                        alignItems="Center"
+                        justifyContent="Center"
+                        class="sapUiSmallMarginBottom"
+                        width="100%">
 
-    <!-- Email -->
-    <Label text="Email" required="true"/>
-    <Input 
-        value="{employee>/email}"
-        valueState="{validation>/emailState}" 
-        valueStateText="{validation>/emailStateText}" 
-        placeholder="Enter email address" 
-        width="100%" 
-        type="Email"
-        required="true"/>
+                        <!-- First Name -->
+                        <VBox width="45%" class="sapUiSmallMarginEnd">
+                            <Label text="First Name" required="true"/>
+                            <Input 
+                                value="{employee>/firstName}" 
+                                valueState="{validation>/firstNameState}"
+                                valueStateText="{validation>/firstNameStateText}"
+                                placeholder="Enter first name" 
+                                width="100%" 
+                                required="true"/>
+                        </VBox>
+                        
+                        <ToolbarSpacer width="5%"/>
 
-    <!-- Hire Date -->
-    <Label text="Hire Date" required="true"/>
-    <DatePicker 
-        value="{employee>/hireDate}"
-        valueState="{validation>/hireDateState}" 
-        valueStateText="{validation>/hireDateStateText}" 
-        width="100%" 
-        displayFormat="dd MMM yyyy"
-        valueFormat="yyyy-MM-dd"
-        required="true"/>
+                        <!-- Last Name -->
+                        <VBox width="45%">
+                            <Label text="Last Name" required="true"/>
+                            <Input 
+                                value="{employee>/lastName}" 
+                                valueState="{validation>/lastNameState}"
+                                valueStateText="{validation>/lastNameStateText}"
+                                placeholder="Enter last name" 
+                                width="100%" 
+                                required="true"/>
+                        </VBox>
+                    </HBox>
 
-    <!-- Role -->
-    <Label text="Role" required="true"/>
-    <ComboBox 
-        width="100%" 
-        selectedKey="{employee>/role/ID}"
-        valueState="{validation>/roleState}" 
-        valueStateText="{validation>/roleStateText}"
-        required="true"
-        items="{
-            path: 'roles>/',
-            templateShareable: false
-        }">
-        <core:Item key="{roles>ID}" text="{roles>name}"/>
-    </ComboBox>
+                    <Label text=""/>
 
-    <!-- Department -->
-    <Label text="Department" required="true"/>
-    <ComboBox 
-        width="100%" 
-        selectedKey="{employee>/department/ID}"
-        valueState="{validation>/departmentState}" 
-        valueStateText="{validation>/departmentStateText}"
-        required="true"
-        items="{
-            path: 'departments>/',
-            templateShareable: false
-        }">
-        <core:Item key="{departments>ID}" text="{departments>name}"/>
-    </ComboBox>
+                    <HBox
+                        alignItems="Center"
+                        justifyContent="Center"
+                        class="sapUiSmallMarginBottom"
+                        width="100%">
 
-    <!-- Salary (read-only) -->
-    <Label text="Salary"/>
-    <Input 
-        value="{employee>/salary}" 
-        width="100%" 
-        editable="false"/>
+                        <!-- Email -->
+                        <VBox width="45%" class="sapUiSmallMarginEnd">
+                            <Label text="Email" required="true"/>
+                            <Input 
+                                value="{employee>/email}"
+                                valueState="{validation>/emailState}" 
+                                valueStateText="{validation>/emailStateText}" 
+                                placeholder="Enter email address" 
+                                width="100%" 
+                                type="Email"
+                                required="true"/>
+                        </VBox>
+                        
+                        <ToolbarSpacer width="5%"/>
 
-    <!-- Submit Button -->
-    <Label text=""/>
-    <Button text="Submit" type="Emphasized" press="onSubmit" class="sapUiMediumMarginTop"/>
-</f:content>
+                        <!-- Hire Date -->
+                        <VBox width="45%">
+                            <Label text="Hire Date" required="true"/>
+                            <DatePicker 
+                                value="{employee>/hireDate}"
+                                valueState="{validation>/hireDateState}" 
+                                valueStateText="{validation>/hireDateStateText}" 
+                                width="100%" 
+                                displayFormat="dd MMM yyyy"
+                                valueFormat="yyyy-MM-dd"
+                                required="true"/>
+                        </VBox>
+                    </HBox>
+
+                    <Label text=""/>
+
+                    <HBox
+                        alignItems="Center"
+                        justifyContent="Center"
+                        class="sapUiSmallMarginBottom"
+                        width="100%">
+
+                        <!-- Role -->
+                        <VBox width="45%" class="sapUiSmallMarginEnd">
+                            <Label text="Role" required="true"/>
+                            <ComboBox 
+                                width="100%" 
+                                selectedKey="{employee>/role/ID}"
+                                valueState="{validation>/roleState}" 
+                                valueStateText="{validation>/roleStateText}"
+                                required="true"
+                                items="{
+                                    path: 'roles>/',
+                                    templateShareable: false
+                                }">
+                                <core:Item key="{roles>ID}" text="{roles>name}"/>
+                            </ComboBox>
+                        </VBox>
+                        
+                        <ToolbarSpacer width="5%"/>
+
+                        <!-- Department -->
+                        <VBox width="45%">
+                            <Label text="Department" required="true"/>
+                            <ComboBox 
+                                width="100%" 
+                                selectedKey="{employee>/department/ID}"
+                                valueState="{validation>/departmentState}" 
+                                valueStateText="{validation>/departmentStateText}"
+                                required="true"
+                                items="{
+                                    path: 'departments>/',
+                                    templateShareable: false
+                                }">
+                                <core:Item key="{departments>ID}" text="{departments>name}"/>
+                            </ComboBox>
+                        </VBox>
+                    </HBox>
+
+                    <Label text=""/>
+                    
+                    <HBox alignItems="Center" justifyContent="Center" class="sapUiSmallMarginBottom" width="100%">
+
+                        <!-- Salary (read-only) -->
+                        <VBox width="100%" class="sapUiSmallMarginEnd">
+                            <Label text="Salary"/>
+                            <Input value="{employee>/salary}" width="100%" editable="false"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Submit Button -->
+                    <Label text=""/>
+                    <Button text="Submit" type="Emphasized" press="onSubmit" class="sapUiMediumMarginTop"/>
+                </f:content>
             </f:SimpleForm>
         </content>
     </Page>
